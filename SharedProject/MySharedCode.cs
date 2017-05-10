@@ -14,7 +14,7 @@ namespace SharedProject
 #if WINDOWS_UWP
             var FilePath = Path.Combine(
                 Windows.Storage.ApplicationData.Current.LocalFolder.Path,
-                filename);
+                fileName);
 #else
 #if __ANDROID__
 			string LibraryPath =

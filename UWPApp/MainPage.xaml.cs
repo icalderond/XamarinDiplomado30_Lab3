@@ -22,9 +22,22 @@ namespace UWPApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        //public MainPage()
+        //{
+        //    this.InitializeComponent();
+        //}
         public MainPage()
         {
             this.InitializeComponent();
+            Show();
+        }
+        async void Show()
+        {
+            var Helper = new SharedProject.MySharedCode();
+            var Dialog =
+                new Windows.UI.Popups.MessageDialog(
+                    Helper.GetFilePath("demo.dat"));
+            await Dialog.ShowAsync();
         }
     }
 }
