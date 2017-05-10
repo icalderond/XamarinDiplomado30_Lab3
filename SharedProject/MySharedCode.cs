@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+
 namespace SharedProject
 {
 	public class MySharedCode
@@ -13,11 +15,12 @@ namespace SharedProject
             var FilePath = Path.Combine(
                 Windows.Storage.ApplicationData.Current.LocalFolder.Path,
                 filename);
+#else
 #if __ANDROID__
-               string LibraryPath =
-                   Environment.GetFolderPath(
-                       Environment.SpecialFolder.Personal); ;
-               var FilePath = Path.Combine(LibraryPath, fileName);
+			string LibraryPath =
+				   Environment.GetFolderPath(
+					   Environment.SpecialFolder.Personal); ;
+			var FilePath = Path.Combine(LibraryPath, fileName);
 #endif
 #endif
 			return FilePath;
